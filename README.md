@@ -2,50 +2,46 @@
 
 Automation project for AS400 (TN5250) connection testing.
 
-------------------------------------------------------------------------
+---
 
-## 📦 Prerequisite
+## 📦 Prerequisites
 
--   Java 11+
--   Maven 
+- Java 11+
+- Maven 3+
 
-------------------------------------------------------------------------
+---
 
 ## ⚠ IMPORTANT (First Time Setup Only)
 
-Project ini menggunakan library **TN5250J** yang tidak tersedia di Maven
-Central.
+This project uses the **TN5250J** library which is not available in Maven Central.
 
-Sebelum menjalankan project, WAJIB install jar berikut ke local Maven
-repository:
-
+Before running the project, you MUST install the following JAR into your local Maven repository:
 
 ```bash
 mvn install:install-file -Dfile=lib/tn5250j.jar -DgroupId=id.co.aiafinancial.automation.test -DartifactId=tn5250j -Dversion=1.0 -Dpackaging=jar
 ```
 
-Command ini hanya perlu dijalankan 1x saja di setiap laptop.
+This command only needs to be executed once on each machine.
 
-------------------------------------------------------------------------
+---
 
 ## 🚀 Build Project
 
- Build tanpa menjalankan test
+### Build without running tests
 
 ```bash
 mvn clean install -DskipTests
 ```
 
-Build dengan menjalankan test
+### Build with running tests
 
 ```bash
 mvn clean install
 ```
 
-
-------------------------------------------------------------------------
+---
 
 ## 👨‍💻 Notes
 
--   Jangan hapus folder `lib/`
--   Jalankan install TN5250J sebelum build pertama kali
+- Do not delete the `lib/` folder
+- Make sure TN5250J is installed before the first build
